@@ -1,5 +1,4 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
 import BaseLayout from "./BaseLayout.astro";
 
 export interface Props {
@@ -32,7 +31,14 @@ const {
           </div>
         )
       }
-{ credit && ( <a href={credit} class="font-thin text-xs">Image Credit</a>)}
+      {
+        credit && (
+          <br/>
+          <a href={credit} class="font-thin my-2 text-xs">
+            Image Credit
+          </a>
+        )
+      }
       <div class="divider my-2"></div>
       <slot />
     </article>
