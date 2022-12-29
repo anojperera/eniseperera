@@ -8,7 +8,8 @@ M: 4/4
 L: 1/8
 K: Emin
 |:GD|C|B|A|B|G|d|C|BA|
-|:Gd|C|B|A|B:|`;
+|:GD|C|B|A|B|||G|A|B|C|D:|
+|f''|e''|f''|e''|f''|G|`
 
 const abcOptions = { add_classes: true };
 
