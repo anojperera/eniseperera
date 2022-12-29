@@ -15,10 +15,27 @@ eB B2 eBgB|eB B2 defg|afe^c dBAF|DEFD E2:|`;
 const abcOptions = { add_classes: true };
 const audioParams = { chordsOff: true };
 const visualObj = abcjs.renderAbc("paper", music, abcOptions)[0];
+
+const CursorControl = function() {
+  this.beatSubdivisions = 2;
+  this.onStart = function() {
+    console.log("The tune has started playing.");
+  }
+  this.onFinished = function() {
+    console.log("The tune has stopped playing.");
+  }
+  this.onBeat = function(beatNumber) {
+    console.log("Beat " + beatNumber + " is happening.");
+  }
+  this.onEvent = function(event) {
+    console.log("An event is happening", event);
+  }
+};
+
 if (abcjs.synth.supportsAudio()) {
   const synthController = new abcjs.synth.SynthController();
   synthController.load("#audio",
-    {},
+    new CursorControl(),
     {
       displayLoop: true,
       displayRestart: true,
@@ -29,7 +46,7 @@ if (abcjs.synth.supportsAudio()) {
 
   const midiBuffer = new abcjs.synth.CreateSynth();
   midiBuffer.init({
-    //audioContext: new AudioContext(),
+    // audioContext: new AudioContext(),
     visualObj: visualObj,
     // sequence: [],
     // millisecondsPerMeasure: 1000,
