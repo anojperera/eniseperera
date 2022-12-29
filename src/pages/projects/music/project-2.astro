@@ -2,18 +2,16 @@
 import ProjectLayout from "../../../layouts/ProjectLayout.astro";
 import TimeLineElement from "../../../components/cv/TimeLine.astro";
 import { ProjectProps } from "../../../interfaces/ProjectProps.astro";
-const pubDate = "2022-08-01";
 
-export const props: ProjectProps {
-title : "Autumn",
-description : "With this tune brings us amazing Autumn",
-pubDate : "2022-08-01",
-updatedDate : "2022-08-01",
-heroImage : "/images/spring.jpeg",
-credit :
-  "https://unsplash.com/@aniket940518?utm_source:unsplash&utm_medium=referral&utm_content=creditCopyTexti"
-}
-
+export const props: ProjectProps = {
+  title: "Autumn",
+  description: "With this tune brings us amazing Autumn",
+  pubDate: "2022-08-01",
+  updatedDate: "2022-08-01",
+  heroImage: "/images/spring.jpeg",
+  credit:
+    "https://unsplash.com/@aniket940518?utm_source:unsplash&utm_medium=referral&utm_content=creditCopyTexti",
+};
 ---
 
 <ProjectLayout
