@@ -1,0 +1,50 @@
+---
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import TimeLineElement from "../../components/cv/TimeLine.astro";
+
+const title = "Autumn";
+const description = "With this tune brings us amazing Autumn";
+const pubDate = "2022-08-01";
+const updatedDate = pubDate;
+const heroImage = "/images/spring.jpeg";
+const credit =
+  "https://unsplash.com/@aniket940518?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyTexti";
+---
+
+<ProjectLayout
+  title={title}
+  description={description}
+  pubDate={pubDate}
+  updatedDate={updatedDate}
+  heroImage={heroImage}
+  credit={credit}
+>
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Journey</div>
+  </div>
+  <div class="mb-10 text-justify">
+    I am trying to describe the process of creating music.
+  </div>
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="Thought"
+      subtitle=""
+      desc="I looked outside the window and saw a butterfy inspecting the flowers."
+    />
+    <TimeLineElement
+      title="Rhythem"
+      subtitle=""
+      desc="It seemed so frantic as if the something is going to happen soon that the butterfly needed the necter."
+    />
+    <TimeLineElement
+      title="Action"
+      subtitle=""
+      desc="I sat down and start playing a tune a which I thought would reflect what I was observing through the window."
+    />
+  </div>
+  <div id="paper"></div>
+  <script>
+    import abcjs from "abcjs";
+    abcjs.renderAbc("paper", "X:1\nK:D\nDDAA|BBA2|\n");
+  </script>
+</ProjectLayout>
