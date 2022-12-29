@@ -1,23 +1,28 @@
 ---
 import ProjectLayout from "../../../layouts/ProjectLayout.astro";
 import TimeLineElement from "../../../components/cv/TimeLine.astro";
-
-const title = "Autumn";
-const description = "With this tune brings us amazing Autumn";
+import { ProjectProps } from "../../../interfaces/ProjectProps.astro";
 const pubDate = "2022-08-01";
-const updatedDate = pubDate;
-const heroImage = "/images/spring.jpeg";
-const credit =
-  "https://unsplash.com/@aniket940518?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyTexti";
+
+export const props: ProjectProps {
+title : "Autumn",
+description : "With this tune brings us amazing Autumn",
+pubDate : "2022-08-01",
+updatedDate : "2022-08-01",
+heroImage : "/images/spring.jpeg",
+credit :
+  "https://unsplash.com/@aniket940518?utm_source:unsplash&utm_medium=referral&utm_content=creditCopyTexti"
+}
+
 ---
 
 <ProjectLayout
-  title={title}
-  description={description}
-  pubDate={pubDate}
-  updatedDate={updatedDate}
-  heroImage={heroImage}
-  credit={credit}
+  title={props.title}
+  description={props.description}
+  pubDate={props.pubDate}
+  updatedDate={props.updatedDate}
+  heroImage={props.heroImage}
+  credit={props.credit}
 >
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Journey</div>
