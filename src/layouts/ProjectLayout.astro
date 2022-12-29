@@ -1,0 +1,33 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+const { title, description, heroImage, credit, pubDate, updatedDate } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} image={heroImage}>
+  <main class="md:flex md:justify-center">
+    <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
+      {heroImage && <img src={heroImage} alt={title} class="w-full mb-6" />}
+      <h1 class="title my-2 text-4xl font-bold">{title}</h1>
+      {pubDate && <time>{pubDate}</time>}
+      {
+        updatedDate && (
+          <div>
+            {" "}
+            Last updated on <time>{updatedDate}</time>{" "}
+          </div>
+        )
+      }
+      {
+        credit && (
+          <br/>
+          <a href={credit} class="font-thin my-2 text-xs">
+            Image Credit
+          </a>
+        )
+      }
+      <div class="divider my-2"></div>
+      <slot />
+    </article>
+  </main>
+</BaseLayout>
