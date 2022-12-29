@@ -1,7 +1,7 @@
 import abcjs from "abcjs";
 
 const music = `X: 1
-T: Cooley's
+T: Enise Perera
 M: 4/4
 L: 1/8
 K: Emin
