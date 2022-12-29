@@ -9,11 +9,12 @@ export interface Props {
     pubDate?: string;
     updatedDate?: string;
     heroImage?: string;
+    credit?: string;
   };
 }
 
 const {
-  content: { title, description, pubDate, updatedDate, heroImage }
+  content: { title, description, pubDate, updatedDate, heroImage, credit },
 } = Astro.props;
 ---
 
@@ -31,8 +32,9 @@ const {
           </div>
         )
       }
+{ credit && ( <a href={credit} class="font-thin text-xs">Image Credit</a>)}
       <div class="divider my-2"></div>
-        <slot />
+      <slot />
     </article>
   </main>
 </BaseLayout>
