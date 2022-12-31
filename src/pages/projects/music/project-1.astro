@@ -2,7 +2,7 @@
 import ProjectLayout from "../../../layouts/ProjectLayout.astro";
 import TimeLineElement from "../../../components/cv/TimeLine.astro";
 import { ProjectProps } from "../../../interfaces/ProjectProps.astro";
-import Music from "./music-1.astro";
+import Music from "../../../components/Music.astro";
 
 export const props: ProjectProps = {
   title: "Spring Music",
@@ -13,6 +13,15 @@ export const props: ProjectProps = {
   credit:
     "https://unsplash.com/@aniket940518?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyTexti",
 };
+
+const music = `X: 1
+T: Enise Perera
+M: 4/4
+L: 1/8
+K: Emin
+|:GD|C|B|A|B|G|d|C|BA|
+|:GD|C|B|A|B|||G|A|B|C|D:|
+|f''|e''|f''|e''|f''|G|`;
 ---
 
 <ProjectLayout
@@ -46,5 +55,5 @@ export const props: ProjectProps = {
       desc="I sat down and start playing a tune a which I thought would reflect what I was observing through the window."
     />
   </div>
-  <Music client:load />
+  <Music notes={music} />
 </ProjectLayout>
