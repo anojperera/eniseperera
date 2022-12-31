@@ -2,6 +2,8 @@
 import ProjectLayout from "../../../layouts/ProjectLayout.astro";
 import TimeLineElement from "../../../components/cv/TimeLine.astro";
 import { ProjectProps } from "../../../interfaces/ProjectProps.astro";
+import Music from "./music-1.astro";
+import Music1 from "./music-1.astro";
 
 export const props: ProjectProps = {
   title: "Spring Music",
@@ -45,10 +47,5 @@ export const props: ProjectProps = {
       desc="I sat down and start playing a tune a which I thought would reflect what I was observing through the window."
     />
   </div>
-  <div id="paper"></div>
-  <div id="audio"></div>
-
-  <script>
-    import "./scripts/spring.js";
-  </script>
+  <Music client:load />
 </ProjectLayout>
