@@ -1,0 +1,37 @@
+---
+const { notes } = Astro.props;
+---
+
+<music-elm id="paper" data-notes={notes} />
+<music-elm id="audio" />
+<script>
+  import abcjs from "abcjs";
+
+  import "abcjs/abcjs-audio.css";
+
+  class Music extends HTMLElement {
+    constructor() {
+      super();
+
+      const music = this.dataset.notes;
+      const abcOptions = { add_classes: true };
+
+      try {
+        const visualObj = abcjs.renderAbc("paper", music, abcOptions)[0];
+        if (abcjs.synth.supportsAudio()) {
+          const synthControl = new abcjs.synth.SynthController();
+          synthControl.load("#audio", null, {
+            displayRestart: true,
+            displayPlay: true,
+            displayProgress: true,
+          });
+          synthControl.setTune(visualObj, false);
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    }
+  }
+
+  customElements.define("music-elm", Music);
+</script>
