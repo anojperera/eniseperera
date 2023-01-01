@@ -3,7 +3,7 @@ layout: "../../layouts/PostLayout.astro"
 title: "Demo Post 1"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 pubDate: "Sep 10 2022"
-heroImage: "/typewriter.jpeg"
+heroImage: "/images/typewriter.jpeg"
 credit: "https://unsplash.com/@retrosupply?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"  
 ---
 
