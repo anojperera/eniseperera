@@ -9,7 +9,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "aws s3 sync dist/ s3://eniseperera-client"
   },
   "dependencies": {
     "@astrojs/mdx": "^0.11.1",
