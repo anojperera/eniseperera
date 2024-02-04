@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/PostLayout.astro"
-title: "Kent Winter Qualifyer"
+title: "End of Summer Swim Gala"
 description: ""
 pubDate: "Sep 11 2022"
 heroImage: "/images/typewriter.jpeg"
@@ -8,7 +8,7 @@ credit: "https://unsplash.com/@retrosupply?utm_source=unsplash&utm_medium=referr
 
 ---
 
-I took part in Kent Winter Qualifyer at Maidstone Leisure centre where I won 3 gold medals, 2 silvers and 1 bronze in my age category.
+I took part in end of summer swimming gala at Maidstone Leisure Centre for Maidstone Swimming Club. 
 
 <video id="example_video_1" class="video-js vjs-default-skin"
     controls preload="auto" width="1600" height="900"
