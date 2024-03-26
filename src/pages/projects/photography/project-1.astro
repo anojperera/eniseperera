@@ -1,0 +1,22 @@
+---
+import ProjectLayout from "../../../layouts/ProjectLayout.astro";
+import { ProjectProps } from "../../../interfaces/ProjectProps.astro";
+export const props: ProjectProps = {
+  title: "Autumn photography",
+  description: "I like taking pictures and videos with my camera",
+  pubDate: "2022-03-01",
+  updatedDate: "2022-03-01",
+  heroImage: "/images/autumn.jpeg",
+  credit:
+    "https://unsplash.com/@aniket940518?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyTexti",
+};
+---
+
+<ProjectLayout
+  title={props.title}
+  description={props.description}
+  pubDate={props.pubDate}
+  updatedDate={props.updatedDate}
+  heroImage={props.heroImage}
+  credit={props.credit}
+/>
