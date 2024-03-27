@@ -2,7 +2,7 @@
 layout: "../../layouts/PostLayout.astro"
 title: "End of Summer Swim Gala"
 description: ""
-pubDate: "Sep 11 2022"
+pubDate: "2022-09-11"
 heroImage: "/images/typewriter.jpeg"
 credit: "https://unsplash.com/@retrosupply?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
 ---

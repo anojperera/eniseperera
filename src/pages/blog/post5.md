@@ -2,7 +2,7 @@
 layout: "../../layouts/PostLayout.astro"
 title: "My Trip to Alegria - Royal Albert Hall"
 description: ""
-pubDate: "Feb 11 2024"
+pubDate: "2024-02-11"
 heroImage: "/images/johen-redman-ipSAoDMdZbM-unsplash.jpg"
 credit: "https://unsplash.com/@johenredman?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"  
 ---

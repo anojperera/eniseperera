@@ -2,7 +2,7 @@
 layout: "../../layouts/PostLayout.astro"
 title: "Time Trial Winter 2024"
 description: ""
-pubDate: "Feb 04 2024"
+pubDate: "2024-02-04"
 heroImage: "/images/swimming.jpeg"
 credit: "https://unsplash.com/photos/photography-of-competing-swimmers-AZcNLJgO4XE?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash"
 ---

@@ -2,7 +2,7 @@
 layout: "../../layouts/PostLayout.astro"
 title: "My Bracelets"
 description: "I made a few bracelets with a crazy loom I got from a toy shop."
-pubDate: "Sep 12 2022"
+pubDate: "2022-09-12"
 heroImage: "/images/IMG_2192.jpeg"
 credit: "https://unsplash.com/@retrosupply?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
 ---

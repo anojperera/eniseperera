@@ -2,7 +2,7 @@
 layout: "../../layouts/PostLayout.astro"
 title: "Kent Junior League Round 1"
 description: ""
-pubDate: "Mar 24 2024"
+pubDate: "2024-03-24"
 heroImage: "/images/swimming.jpeg"
 credit: "https://unsplash.com/photos/photography-of-competing-swimmers-AZcNLJgO4XE?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash"
 ---
