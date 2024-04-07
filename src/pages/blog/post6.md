@@ -9,7 +9,7 @@ credit: "https://unsplash.com/photos/photography-of-competing-swimmers-AZcNLJgO4
 
 Kent Junior League Round 1 at Tunbridge Bridge Wells Sports Centre where I took part in 3 relays, 4 x 50 Freestyle, 4 x 50 medly and
 8 x 50 freestyle. I also took part in 2 individual races, 50m front crawl and 50m breaststroke. I won both of them and even better
-Maidstone Club finished 1st.
+Maidstone Club finished 1st. I am in lane 3.
 
 <video id="kj_video_1" class="video-js vjs-default-skin" controls preload="auto" width="1600" height="900">
 <source src="https://eniseperera-media.s3.eu-west-2.amazonaws.com/mar-24/IMG_2859.MOV" type='video/mp4' />
