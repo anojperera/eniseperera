@@ -1,0 +1,41 @@
+---
+ const images = [
+"IMG_0048.jpeg",
+"IMG_0053.jpeg",
+"IMG_0061.jpeg",
+"IMG_0063.jpeg",
+"IMG_0067.jpeg",
+"IMG_0069.jpeg",
+"IMG_0074.jpeg",
+"IMG_0092.jpeg",
+"IMG_0094.jpeg",
+"IMG_0096.jpeg",
+"IMG_0102.jpeg",
+"IMG_0114.jpeg",
+"IMG_0124.jpeg",
+"IMG_0129.jpeg",
+"IMG_0131.jpeg",
+"IMG_0198.jpeg",
+"IMG_0221.jpeg",
+"IMG_0233.jpeg",
+"IMG_0235.jpeg",
+"IMG_0237.jpeg",
+"IMG_0251.jpeg",
+"IMG_0253.jpeg",
+"IMG_0300.jpeg",
+"IMG_2867.jpeg",
+"IMG_2871.jpeg",
+"IMG_2903.jpeg",
+];
+---
+<div class="carousel carousel-center rounded-box">
+{
+  images.map((item) => (
+
+  <div class="carousel-item">
+    <img src=`https://eniseperera-media.s3.eu-west-2.amazonaws.com/apr-24/${item}` alt="airport" />
+  </div>
+))
+}
+</div>
+
