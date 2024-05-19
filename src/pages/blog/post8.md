@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/PostLayout.astro"
-title: "Medway Championchips 2024"
+title: "Medway ASA Championchips 2024"
 description: ""
 pubDate: "2024-04-14"
 heroImage: "/images/swimming.jpeg"
