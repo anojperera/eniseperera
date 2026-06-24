@@ -12,9 +12,9 @@ export default function MusicPage() {
   return (
     <div>
       <div className="mb-10">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-3">Music 🎵</h1>
-        <p className="text-xl text-[var(--text-muted)]">
-          Original compositions, scores, and the stories behind them.
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-[-0.02em] mb-2">Music 🎵</h1>
+        <p className="text-[1.05rem] text-[var(--text-muted)] max-w-prose">
+          Original pieces, playable scores, and the little stories that inspired each melody.
         </p>
       </div>
 
@@ -40,7 +40,7 @@ export default function MusicPage() {
                   />
                 </div>
               )}
-              <h3 className="font-semibold text-2xl mb-2 group-hover:text-[var(--pink-700)] transition">
+              <h3 className="font-semibold text-xl sm:text-2xl mb-2 group-hover:text-[var(--pink-700)] transition">
                 {post.frontmatter.title}
               </h3>
               <p className="text-[var(--text-muted)]">{post.frontmatter.description}</p>

@@ -17,22 +17,34 @@ export default function Home() {
 
   return (
     <div className="space-y-16">
-      {/* Cute Hero */}
-      <div className="text-center pt-4 pb-8">
-        <div className="mb-6">
-          <img
-            src="https://eniseperera-media.s3.eu-west-2.amazonaws.com/images/spring.jpeg"
-            alt="Beautiful spring flowers inspiring music compositions"
-            className="mx-auto rounded-3xl shadow w-full max-w-[420px] aspect-[16/9] object-cover border border-[var(--border)]"
-          />
+      {/* Awesome Revamped Hero - dreamy & impactful */}
+      <div className="relative text-center pt-6 pb-12 overflow-hidden">
+        {/* Decorative background glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,var(--pink-100)_0%,transparent_70%)] -z-10"></div>
+        
+        <div className="mb-8 relative">
+          <div className="mx-auto max-w-[520px] rounded-3xl overflow-hidden shadow-2xl border border-[var(--border)] ring-1 ring-[var(--pink-200)]">
+            <img
+              src="https://eniseperera-media.s3.eu-west-2.amazonaws.com/images/spring.jpeg"
+              alt="Beautiful spring flowers inspiring music compositions"
+              className="w-full aspect-[16/9] object-cover transition-transform duration-700 hover:scale-[1.02]"
+            />
+          </div>
+          {/* Subtle badge */}
+          <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white border border-[var(--border)] px-4 py-1 rounded-full text-xs font-medium text-[var(--pink-700)] shadow">
+            Summer 2025 vibes ✨
+          </div>
         </div>
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter mb-3 text-[var(--pink-800)]">
+
+        <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold tracking-[-0.04em] mb-4 bg-gradient-to-br from-[var(--pink-800)] via-[var(--accent)] to-[var(--lavender)] bg-clip-text text-transparent drop-shadow-sm">
           Hi, I’m Enise!
         </h1>
-        <p className="text-2xl md:text-3xl text-[var(--pink-600)] font-medium mb-4">
+        
+        <p className="text-2xl md:text-[1.75rem] text-[var(--pink-600)] font-semibold mb-5 tracking-tight">
           Hockey Player • Swimmer • Composer • Explorer
         </p>
-        <p className="max-w-md mx-auto text-lg text-[var(--text-muted)]">
+        
+        <p className="max-w-lg mx-auto text-[1.05rem] text-[var(--text-muted)] leading-relaxed">
           {SITE_DESCRIPTION}
         </p>
 
@@ -41,44 +53,50 @@ export default function Home() {
             <Link
               key={cat.href}
               href={cat.href}
-              className="btn btn-primary flex items-center gap-2"
+              className="btn btn-primary flex items-center gap-2 text-base shadow-lg hover:shadow-xl"
             >
               {cat.emoji} {cat.label}
             </Link>
           ))}
         </div>
 
-        <div className="mt-4">
-          <a href="#latest" className="text-sm text-[var(--text-muted)] hover:text-[var(--accent)] inline-flex items-center gap-1">
-            See latest posts <ArrowRight size={16} />
+        <div className="mt-6">
+          <a href="#latest" className="inline-flex items-center gap-2 text-sm font-medium text-[var(--text-muted)] hover:text-[var(--accent)] group">
+            See latest posts 
+            <ArrowRight size={16} className="group-hover:translate-x-0.5 transition" />
           </a>
         </div>
       </div>
 
-      {/* Quick category cards */}
-      <div>
-        <h2 className="text-3xl font-bold mb-6 text-center">Explore</h2>
+      {/* Awesome Explore Section */}
+      <div className="relative">
+        <div className="text-center mb-8">
+          <h2 className="text-4xl font-bold tracking-tight mb-3">Explore My World</h2>
+          <p className="text-[var(--text-muted)] max-w-xs mx-auto">Dive into the adventures that make me who I am.</p>
+        </div>
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {categories.map((cat) => (
             <Link
               key={cat.href}
               href={cat.href}
-              className="card p-6 sm:p-8 text-center group"
+              className="card p-7 sm:p-8 text-center group flex flex-col items-center justify-center min-h-[180px]"
             >
-              <div className="text-4xl sm:text-5xl mb-4 group-hover:scale-110 transition">{cat.emoji}</div>
-              <div className="text-2xl font-semibold mb-1">{cat.label}</div>
-              <div className="text-[var(--text-muted)] text-sm">Discover more →</div>
+              <div className="text-5xl mb-5 transition-all group-hover:scale-110 group-hover:-rotate-3 duration-300">{cat.emoji}</div>
+              <div className="text-2xl font-semibold tracking-tight mb-2 group-hover:text-[var(--accent)] transition-colors">{cat.label}</div>
+              <div className="text-[var(--text-muted)] text-sm group-hover:text-[var(--accent-light)] transition-colors">Discover more →</div>
             </Link>
           ))}
         </div>
       </div>
 
-      {/* Latest posts */}
+      {/* Latest posts - awesome elevated cards */}
       <div id="latest">
-        <div className="flex items-baseline justify-between mb-6">
-          <h2 className="text-3xl font-bold">Latest from my world</h2>
-          <Link href="/swimming" className="text-sm text-[var(--accent)] hover:underline flex items-center gap-1">
-            See all <ArrowRight size={16} />
+        <div className="flex flex-col sm:flex-row items-baseline sm:items-center justify-between mb-8 gap-y-2">
+          <h2 className="text-4xl font-bold tracking-tight">Latest Adventures</h2>
+          <Link href="/swimming" className="inline-flex items-center gap-2 text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-dark)] group">
+            Explore all 
+            <ArrowRight size={15} className="group-hover:translate-x-0.5 transition" />
           </Link>
         </div>
 
@@ -88,25 +106,26 @@ export default function Home() {
               <Link
                 key={post.slug}
                 href={`/${post.frontmatter.category || 'projects'}/${post.slug}`}
-                className="card flex flex-col md:flex-row gap-5 p-5 md:items-center hover:shadow-xl hover:-translate-y-px transition-all group"
+                className="card flex flex-col md:flex-row gap-6 p-6 md:p-5 md:items-center group"
               >
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-1">
-                    <span className="badge">{post.frontmatter.category}</span>
-                    <time className="text-xs text-[var(--text-muted)]">
+                <div className="flex-1 space-y-1.5">
+                  <div className="flex items-center gap-3 text-sm">
+                    <span className="badge text-[10px]">{post.frontmatter.category}</span>
+                    <time className="text-[var(--text-muted)] text-xs tracking-wide">
                       {new Date(post.frontmatter.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
                     </time>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-1.5 group-hover:text-[var(--pink-700)] transition">{post.frontmatter.title}</h3>
-                  <p className="text-[var(--text-muted)] line-clamp-2 text-sm">
+                  <h3 className="text-[1.15rem] font-semibold tracking-tight group-hover:text-[var(--accent)] transition-colors">{post.frontmatter.title}</h3>
+                  <p className="text-[var(--text-muted)] text-sm line-clamp-2 leading-snug">
                     {post.frontmatter.description || 'Read more...'}
                   </p>
                 </div>
+                
                 {post.frontmatter.hero && (
-                  <div className="w-full md:w-36 h-24 md:h-24 flex-shrink-0 overflow-hidden rounded-2xl border border-[var(--border)]">
+                  <div className="w-full md:w-44 h-32 md:h-24 flex-shrink-0 overflow-hidden rounded-2xl border border-[var(--border)] ring-1 ring-inset ring-white/60">
                     <HeroMedia
                       hero={post.frontmatter.hero}
-                      className="rounded-2xl object-cover w-full h-full group-hover:scale-105"
+                      className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500"
                       alt=""
                     />
                   </div>
@@ -114,15 +133,19 @@ export default function Home() {
               </Link>
             ))
           ) : (
-            <p className="text-center py-12 text-[var(--text-muted)]">Content coming soon. Check back after we migrate the posts!</p>
+            <div className="card p-10 text-center">
+              <p className="text-[var(--text-muted)]">More adventures coming soon. Stay tuned!</p>
+            </div>
           )}
         </div>
       </div>
 
-      {/* Short bio footer tease */}
-      <div className="text-center text-[var(--text-muted)] max-w-sm mx-auto text-sm">
-        I swim with Maidstone Swimming Club, write music, and love adventures.
-        Welcome to my little corner of the internet 💗
+      {/* Awesome closing vibe */}
+      <div className="text-center max-w-md mx-auto pt-4 pb-2">
+        <p className="text-[var(--text-muted)] leading-relaxed text-base">
+          I play hockey for Maidstone, swim with passion, compose music, and chase adventures wherever they lead.
+        </p>
+        <div className="mt-4 text-xs tracking-[2px] text-[var(--pink-700)] font-medium">WELCOME TO MY WORLD</div>
       </div>
     </div>
   );

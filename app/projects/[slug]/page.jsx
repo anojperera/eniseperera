@@ -29,14 +29,14 @@ export default async function ProjectPost({ params }) {
         <ArrowLeft size={16} /> Back to Projects
       </Link>
 
-      <div className="mb-8">
-        <div className="badge mb-3">{frontmatter.category}</div>
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-3">{frontmatter.title}</h1>
+      <div className="mb-9">
+        <div className="inline-block badge mb-4 text-xs tracking-wider">{frontmatter.category}</div>
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-[-0.025em] mb-3 leading-none">{frontmatter.title}</h1>
         {frontmatter.description && (
-          <p className="text-lg sm:text-xl text-[var(--text-muted)]">{frontmatter.description}</p>
+          <p className="text-lg sm:text-xl text-[var(--text-muted)] max-w-prose">{frontmatter.description}</p>
         )}
-        <time className="text-sm block mt-2 text-[var(--text-muted)]">
-          {new Date(frontmatter.date).toLocaleDateString()}
+        <time className="inline-block mt-3 px-3 py-px bg-[var(--pink-100)] text-xs text-[var(--pink-700)] rounded-full tracking-wide">
+          {new Date(frontmatter.date).toLocaleDateString(undefined, { month: 'long', year: 'numeric' })}
         </time>
       </div>
 

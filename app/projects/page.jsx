@@ -12,9 +12,9 @@ export default function ProjectsPage() {
   return (
     <div>
       <div className="mb-10">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-3">Projects 📁</h1>
-        <p className="text-xl text-[var(--text-muted)]">
-          School work, photography, and other creative things I’ve made.
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-[-0.02em] mb-2">Projects 📁</h1>
+        <p className="text-[1.05rem] text-[var(--text-muted)] max-w-prose">
+          Creative experiments, school adventures, and the stories behind the things I make.
         </p>
       </div>
 

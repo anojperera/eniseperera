@@ -12,10 +12,9 @@ export default function HockeyPage() {
   return (
     <div>
       <div className="mb-10">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-3">Hockey 🏑</h1>
-        <p className="text-xl text-[var(--text-muted)] max-w-prose">
-          Team sports are the best! I love playing hockey with my friends. 
-          More stories, photos and adventures coming soon.
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-[-0.02em] mb-2">Hockey 🏑</h1>
+        <p className="text-[1.05rem] text-[var(--text-muted)] max-w-prose">
+          The thrill of the game, great teammates, and growing with every match.
         </p>
       </div>
 

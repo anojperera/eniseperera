@@ -12,9 +12,9 @@ export default function SwimmingPage() {
   return (
     <div>
       <div className="mb-10">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-3">Swimming 🏊‍♀️</h1>
-        <p className="text-xl text-[var(--text-muted)]">
-          Galas, time trials, medals and everything with Maidstone Swimming Club.
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-[-0.02em] mb-2">Swimming 🏊‍♀️</h1>
+        <p className="text-[1.05rem] text-[var(--text-muted)] max-w-prose">
+          Galas, personal bests, medals, and the incredible community of Maidstone Swimming Club.
         </p>
       </div>
 
