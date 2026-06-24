@@ -28,3 +28,6 @@ pnpm-debug.log*
 next-env.d.ts
 tsconfig.json
 
+# Local temp files (media uploaded to S3)
+temp/
+

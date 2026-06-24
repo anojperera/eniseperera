@@ -34,12 +34,12 @@ export default function RootLayout({ children }) {
             </Link>
 
             {/* Desktop nav */}
-            <nav className="hidden md:flex items-center gap-1">
+            <nav className="hidden md:flex md:items-center md:gap-1">
               {NAV_ITEMS.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="nav-link px-3 py-1.5 md:px-4 md:py-2"
+                  className="nav-link px-3 py-1.5 md:px-4 md:py-2 md:mx-1"
                 >
                   {item.label}
                 </Link>
