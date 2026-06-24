@@ -1,9 +1,10 @@
-import { getPost, getPostsByCategory, MEDIA_BASE } from '@/lib/content';
+import { getPost, getPostsByCategory } from '@/lib/content';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { mdxComponents } from '@/app/components/mdx-components';
+import HeroMedia from '@/app/components/HeroMedia';
 
 export async function generateStaticParams() {
   const posts = getPostsByCategory('hockey');
@@ -28,18 +29,18 @@ export default async function HockeyPost({ params }) {
 
       <div className="mb-8">
         <div className="badge mb-3">hockey</div>
-        <h1 className="text-5xl font-bold tracking-tight mb-3">{frontmatter.title}</h1>
-        {frontmatter.description && <p className="text-xl text-[var(--text-muted)]">{frontmatter.description}</p>}
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-3">{frontmatter.title}</h1>
+        {frontmatter.description && <p className="text-lg sm:text-xl text-[var(--text-muted)]">{frontmatter.description}</p>}
         <time className="text-sm mt-2 block text-[var(--text-muted)]">
           {new Date(frontmatter.date).toLocaleDateString()}
         </time>
       </div>
 
       {frontmatter.hero && (
-        <img
-          src={frontmatter.hero.startsWith('http') ? frontmatter.hero : `${MEDIA_BASE}/${frontmatter.hero}`}
-          alt={frontmatter.title}
+        <HeroMedia
+          hero={frontmatter.hero}
           className="rounded-3xl mb-10 w-full max-h-[420px] object-cover border border-[var(--border)]"
+          alt={frontmatter.title}
         />
       )}
 

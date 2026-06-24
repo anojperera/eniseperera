@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { getPostsByCategory, MEDIA_BASE } from '@/lib/content';
+import { getPostsByCategory } from '@/lib/content';
+import HeroMedia from '@/app/components/HeroMedia';
 
 export const metadata = {
   title: 'Music',
@@ -11,7 +12,7 @@ export default function MusicPage() {
   return (
     <div>
       <div className="mb-10">
-        <h1 className="text-5xl font-bold tracking-tight mb-3">Music 🎵</h1>
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-3">Music 🎵</h1>
         <p className="text-xl text-[var(--text-muted)]">
           Original compositions, scores, and the stories behind them.
         </p>
@@ -32,10 +33,10 @@ export default function MusicPage() {
             >
               {post.frontmatter.hero && (
                 <div className="overflow-hidden rounded-2xl mb-4 border border-[var(--border)]">
-                  <img
-                    src={post.frontmatter.hero.startsWith('http') ? post.frontmatter.hero : `${MEDIA_BASE}/${post.frontmatter.hero}`}
+                  <HeroMedia
+                    hero={post.frontmatter.hero}
+                    className="rounded-2xl mb-4 h-40 object-cover w-full group-hover:scale-105"
                     alt=""
-                    className="rounded-2xl mb-4 h-40 object-cover w-full group-hover:scale-105 transition-transform"
                   />
                 </div>
               )}

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import 'abcjs/abcjs-audio.css';
 
 export default function MusicScore({ abc, title }) {
   const paperRef = useRef(null);

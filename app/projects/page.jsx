@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { getPostsByCategory, MEDIA_BASE } from '@/lib/content';
+import { getPostsByCategory } from '@/lib/content';
+import HeroMedia from '@/app/components/HeroMedia';
 
 export const metadata = {
   title: 'Projects',
@@ -11,7 +12,7 @@ export default function ProjectsPage() {
   return (
     <div>
       <div className="mb-10">
-        <h1 className="text-5xl font-bold tracking-tight mb-3">Projects 📁</h1>
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-3">Projects 📁</h1>
         <p className="text-xl text-[var(--text-muted)]">
           School work, photography, and other creative things I’ve made.
         </p>
@@ -27,24 +28,24 @@ export default function ProjectsPage() {
             <Link
               href={`/projects/${post.slug}`}
               key={post.slug}
-              className="card flex gap-6 p-5 items-center group hover:shadow-lg hover:-translate-y-0.5 transition-all"
+              className="card flex gap-4 sm:gap-6 p-4 sm:p-5 items-center group hover:shadow-lg hover:-translate-y-0.5 transition-all"
             >
               {post.frontmatter.hero && (
-                <div className="w-28 h-24 flex-shrink-0 overflow-hidden rounded-2xl border border-[var(--border)]">
-                  <img
-                    src={post.frontmatter.hero.startsWith('http') ? post.frontmatter.hero : `${MEDIA_BASE}/${post.frontmatter.hero}`}
-                    alt={post.frontmatter.title}
-                    className="w-28 h-24 object-cover rounded-2xl group-hover:scale-105 transition-transform"
+                <div className="w-20 h-16 sm:w-28 sm:h-24 flex-shrink-0 overflow-hidden rounded-2xl border border-[var(--border)]">
+                  <HeroMedia
+                    hero={post.frontmatter.hero}
+                    className="w-20 h-16 sm:w-28 sm:h-24 group-hover:scale-105"
+                    alt=""
                   />
                 </div>
               )}
               <div className="flex-1 min-w-0">
-                <h3 className="font-semibold text-xl mb-1 group-hover:text-[var(--pink-700)] transition">
+                <h3 className="font-semibold text-lg sm:text-xl mb-1 group-hover:text-[var(--pink-700)] transition">
                   {post.frontmatter.title}
                 </h3>
                 <p className="text-[var(--text-muted)] line-clamp-2">{post.frontmatter.description}</p>
                 <time className="text-xs mt-1 block text-[var(--text-muted)]">
-                  {new Date(post.frontmatter.date).toLocaleDateString()}
+                  {new Date(post.frontmatter.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
                 </time>
               </div>
               <div className="text-[var(--accent)] opacity-60 group-hover:opacity-100">→</div>

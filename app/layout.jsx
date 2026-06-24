@@ -18,7 +18,7 @@ export const metadata = {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
-    images: [{ url: '/social_img.png' }],
+    images: [{ url: 'https://eniseperera-media.s3.eu-west-2.amazonaws.com/social_img.png' }],
   },
 };
 
@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="nav-link"
+                  className="nav-link px-3 py-1.5 md:px-4 md:py-2"
                 >
                   {item.label}
                 </Link>
@@ -48,7 +48,7 @@ export default function RootLayout({ children }) {
 
             {/* Mobile menu trigger (simple for now) */}
             <details className="md:hidden relative">
-              <summary className="btn btn-ghost p-2 list-none cursor-pointer">
+              <summary className="btn btn-ghost p-3 list-none cursor-pointer min-h-[44px] flex items-center">
                 <Menu size={20} />
               </summary>
               <nav className="absolute right-0 mt-2 bg-white border border-[var(--border)] rounded-2xl p-2 shadow w-44">
@@ -56,7 +56,7 @@ export default function RootLayout({ children }) {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block px-3 py-2 rounded-xl hover:bg-[var(--pink-50)]"
+                    className="block px-4 py-3 rounded-xl hover:bg-[var(--pink-50)] text-base min-h-[44px] flex items-center"
                   >
                     {item.label}
                   </Link>

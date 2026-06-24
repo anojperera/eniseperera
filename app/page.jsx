@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import { getAllPosts, MEDIA_BASE } from '@/lib/content';
+import { getAllPosts } from '@/lib/content';
 import { SITE_DESCRIPTION } from '@/lib/site';
 import { ArrowRight } from 'lucide-react';
+import HeroMedia from '@/app/components/HeroMedia';
 
 const categories = [
   { href: '/projects', label: 'Projects', emoji: '📁' },
@@ -20,16 +21,16 @@ export default function Home() {
       <div className="text-center pt-4 pb-8">
         <div className="mb-6">
           <img
-            src="/images/spring.jpeg"
+            src="https://eniseperera-media.s3.eu-west-2.amazonaws.com/images/spring.jpeg"
             alt="Beautiful spring flowers inspiring music compositions"
             className="mx-auto rounded-3xl shadow w-full max-w-[420px] aspect-[16/9] object-cover border border-[var(--border)]"
           />
         </div>
-        <h1 className="text-6xl md:text-7xl font-bold tracking-tighter mb-3 text-[var(--pink-800)]">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter mb-3 text-[var(--pink-800)]">
           Hi, I’m Enise!
         </h1>
         <p className="text-2xl md:text-3xl text-[var(--pink-600)] font-medium mb-4">
-          Swimmer • Composer • Explorer
+          Hockey Player • Swimmer • Composer • Explorer
         </p>
         <p className="max-w-md mx-auto text-lg text-[var(--text-muted)]">
           {SITE_DESCRIPTION}
@@ -62,9 +63,9 @@ export default function Home() {
             <Link
               key={cat.href}
               href={cat.href}
-              className="card p-8 text-center group"
+              className="card p-6 sm:p-8 text-center group"
             >
-              <div className="text-5xl mb-4 group-hover:scale-110 transition">{cat.emoji}</div>
+              <div className="text-4xl sm:text-5xl mb-4 group-hover:scale-110 transition">{cat.emoji}</div>
               <div className="text-2xl font-semibold mb-1">{cat.label}</div>
               <div className="text-[var(--text-muted)] text-sm">Discover more →</div>
             </Link>
@@ -96,17 +97,17 @@ export default function Home() {
                       {new Date(post.frontmatter.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
                     </time>
                   </div>
-                  <h3 className="text-xl font-semibold mb-1.5 group-hover:text-[var(--pink-700)] transition">{post.frontmatter.title}</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-1.5 group-hover:text-[var(--pink-700)] transition">{post.frontmatter.title}</h3>
                   <p className="text-[var(--text-muted)] line-clamp-2 text-sm">
                     {post.frontmatter.description || 'Read more...'}
                   </p>
                 </div>
                 {post.frontmatter.hero && (
                   <div className="w-full md:w-36 h-24 md:h-24 flex-shrink-0 overflow-hidden rounded-2xl border border-[var(--border)]">
-                    <img
-                      src={post.frontmatter.hero.startsWith('http') ? post.frontmatter.hero : `${MEDIA_BASE}/${post.frontmatter.hero}`}
+                    <HeroMedia
+                      hero={post.frontmatter.hero}
+                      className="rounded-2xl object-cover w-full h-full group-hover:scale-105"
                       alt=""
-                      className="rounded-2xl object-cover w-full h-full group-hover:scale-105 transition-transform"
                     />
                   </div>
                 )}
