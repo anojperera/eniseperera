@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cute pink theme — modern + playful, inspired by old "valentine" */
+:root {
+  --pink-50: #fdf2f8;
+  --pink-100: #fce7f3;
+  --pink-200: #fbcfe8;
+  --pink-300: #f9a8d4;
+  --pink-400: #f472b6;
+  --pink-500: #ec4899;
+  --pink-600: #db2777;
+  --pink-700: #be185d;
+  --pink-800: #9d174d;
+  --pink-900: #831843;
+
+  --bg: #fffaf5;           /* warm cream */
+  --card: #ffffff;
+  --text: #3f2a2a;
+  --text-muted: #6b5a5a;
+  --accent: #ec4899;       /* main pink */
+  --accent-light: #f9a8d4;
+  --border: #f3d1e3;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* Cute card style */
+.card {
+  @apply rounded-3xl bg-white shadow-sm border border-[var(--border)] transition-all duration-200;
+}
+
+.card:hover {
+  @apply shadow-md -translate-y-0.5;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-2xl px-6 py-2.5 text-sm font-medium transition-all active:scale-[0.985];
+}
+
+.btn-primary {
+  @apply bg-[var(--accent)] text-white hover:bg-[var(--accent-light)] hover:text-[var(--pink-900)];
+}
+
+.btn-ghost {
+  @apply text-[var(--text-muted)] hover:bg-[var(--pink-100)] hover:text-[var(--text)];
+}
+
+.badge {
+  @apply inline-flex items-center rounded-full px-3 py-0.5 text-xs font-medium bg-[var(--pink-100)] text-[var(--pink-700)];
+}
+
+/* Prose for blog / post content - cute readable */
+.prose {
+  @apply text-[var(--text)] max-w-none;
+}
+
+.prose h1, .prose h2, .prose h3 {
+  @apply text-[var(--pink-800)];
+}
+
+.prose a {
+  @apply text-[var(--accent)] underline decoration-[var(--accent-light)] hover:text-[var(--pink-600)];
+}
+
+.prose img {
+  @apply rounded-2xl border border-[var(--border)];
+}
+
+/* Music score container */
+.music-container {
+  @apply bg-white rounded-3xl p-6 border border-[var(--border)] overflow-x-auto;
+}
+
+/* Timeline */
+.timeline {
+  @apply relative pl-8 border-l-2 border-[var(--accent-light)];
+}
+
+.timeline-item {
+  @apply mb-8 relative;
+}
+
+.timeline-item::before {
+  content: '';
+  @apply absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-[var(--accent)] border-4 border-white;
+}
+
+/* Video styling */
+video {
+  @apply rounded-2xl border border-[var(--border)] w-full max-w-full;
+}
+
+/* Gallery simple */
+.gallery {
+  @apply grid grid-cols-2 md:grid-cols-3 gap-3;
+}
+
+.gallery img {
+  @apply rounded-2xl object-cover w-full aspect-[4/3] border border-[var(--border)];
+}
+
+/* Nav link active */
+.nav-link {
+  @apply px-3 py-1.5 rounded-xl text-sm transition-colors;
+}
+
+.nav-link:hover {
+  @apply bg-[var(--pink-100)];
+}
+
+.nav-link.active {
+  @apply bg-[var(--pink-200)] text-[var(--pink-800)] font-medium;
+}
+
+/* Footer */
+footer {
+  @apply text-[var(--text-muted)] text-sm;
+}
+
+/* Make it feel warm and kid-friendly */
+a {
+  @apply transition-colors;
+}

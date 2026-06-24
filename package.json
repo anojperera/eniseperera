@@ -1,28 +1,32 @@
 {
-  "name": "Astro Modern Personal Website",
-  "description": "Astro Modern personal website template with Project Section, CV Section, Paginated Blog, Shop, RSS Feed, SEO Friendly, Visual themes and Responsive Desing.",
-  "type": "module",
-  "version": "1.1.1",
+  "name": "enise-perera",
+  "description": "Enise Perera's personal website — swimming, music, projects and more. Modern cute pink theme.",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "deploy": "aws s3 sync dist/ s3://eniseperera-client"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.11.1",
-    "@astrojs/rss": "^1.0.1",
-    "@astrojs/sitemap": "^1.0.0",
-    "@astrojs/tailwind": "^1.0.1",
-    "abcjs": "^6.1.7",
-    "astro": "^1.2.3",
-    "daisyui": "^2.27.0",
-    "video.js": "^8.10.0"
+    "abcjs": "^6.4.4",
+    "date-fns": "^4.1.0",
+    "feed": "^4.2.2",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^0.511.0",
+    "next": "15.2.4",
+    "next-mdx-remote": "^5.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "zod": "^3.24.3"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.7"
+    "@tailwindcss/typography": "^0.5.16",
+    "autoprefixer": "^10.5.1",
+    "eslint": "^9.23.0",
+    "eslint-config-next": "15.2.4",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17"
   }
 }
