@@ -30,14 +30,28 @@ export const metadata = {
     template: `%s | ${SITE_TITLE}`,
   },
   description: SITE_DESCRIPTION,
+  authors: [{ name: 'Enise Perera', url: SITE_URL }],
+  creator: 'Enise Perera',
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
     apple: '/favicons/apple-touch-icon.png',
+    shortcut: '/favicon.ico',
   },
+  alternates: {
+    types: {
+      'application/rss+xml': `${SITE_URL}/feed.xml`,
+    },
+  },
+  manifest: '/favicons/site.webmanifest',
   openGraph: {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
+    siteName: SITE_TITLE,
     images: [{ url: 'https://eniseperera-media.s3.eu-west-2.amazonaws.com/social_img.png' }],
   },
 };
