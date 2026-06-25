@@ -4,6 +4,7 @@ import PostCard from '@/app/components/PostCard';
 
 export const metadata = {
   title: 'Music',
+  description: 'Original music compositions, playable scores, and the stories that inspired each melody.',
 };
 
 export default function MusicPage() {

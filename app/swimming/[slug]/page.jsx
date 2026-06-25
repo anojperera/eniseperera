@@ -2,6 +2,20 @@ import { getPost, getPostsByCategory } from '@/lib/content';
 import { notFound } from 'next/navigation';
 import PostArticle from '@/app/components/PostArticle';
 
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const post = getPost('swimming', slug);
+  if (!post) return {};
+  return {
+    title: post.frontmatter.title,
+    description: post.frontmatter.description,
+    openGraph: {
+      title: post.frontmatter.title,
+      description: post.frontmatter.description,
+    },
+  };
+}
+
 export async function generateStaticParams() {
   const posts = getPostsByCategory('swimming');
   return posts.map((p) => ({ slug: p.slug }));

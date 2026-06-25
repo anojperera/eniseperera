@@ -4,6 +4,7 @@ import PostCard from '@/app/components/PostCard';
 
 export const metadata = {
   title: 'Swimming',
+  description: 'Swimming galas, personal bests, medals and time with the lovely Maidstone Swimming Club crew.',
 };
 
 export default function SwimmingPage() {

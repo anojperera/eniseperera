@@ -5,6 +5,7 @@ import PostCard from '@/app/components/PostCard';
 
 export const metadata = {
   title: 'Hockey',
+  description: 'The thrill of the game, brilliant teammates, and growing with every match on the hockey pitch.',
 };
 
 export default function HockeyPage() {

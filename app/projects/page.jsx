@@ -4,6 +4,7 @@ import PostCard from '@/app/components/PostCard';
 
 export const metadata = {
   title: 'Projects',
+  description: 'Creative experiments, school adventures, and the stories behind the things Enise makes.',
 };
 
 export default function ProjectsPage() {
