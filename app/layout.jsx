@@ -1,7 +1,27 @@
 import './globals.css';
+import { Fredoka, Caveat, Nunito } from 'next/font/google';
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL, NAV_ITEMS } from '@/lib/site';
 import Link from 'next/link';
 import MobileMenu from '@/app/components/MobileMenu';
+
+const display = Fredoka({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-display',
+  display: 'swap',
+});
+const hand = Caveat({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-hand',
+  display: 'swap',
+});
+const body = Nunito({
+  subsets: ['latin'],
+  weight: ['400', '600', '700', '800'],
+  variable: '--font-body',
+  display: 'swap',
+});
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -22,25 +42,39 @@ export const metadata = {
   },
 };
 
+const NAV_EMOJI = {
+  '/projects': '🎨',
+  '/swimming': '🌊',
+  '/music': '🎵',
+  '/hockey': '🏑',
+};
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen flex flex-col bg-[var(--bg)] text-[var(--text)]">
-        {/* Awesome top nav - elevated with gradient and polish */}
-        <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-[var(--border)] shadow-sm">
-          <div className="max-w-5xl mx-auto flex items-center justify-between px-4 h-16">
-            <Link href="/" className="font-bold text-2xl tracking-tighter bg-gradient-to-r from-[var(--pink-800)] via-[var(--accent)] to-[var(--lavender)] bg-clip-text text-transparent hover:scale-105 transition-transform">
-              Enise Perera ✨
+    <html lang="en" className={`${display.variable} ${hand.variable} ${body.variable}`}>
+      <body className="min-h-screen flex flex-col">
+        {/* Dreamy floating doodles in the sky behind everything */}
+        <div className="sky" aria-hidden="true">
+          <span className="float-bit" style={{ left: '6%', top: '12%', animationDelay: '0s' }}>🌸</span>
+          <span className="float-bit" style={{ left: '88%', top: '8%', animationDelay: '1.4s' }}>✨</span>
+          <span className="float-bit" style={{ left: '78%', top: '34%', animationDelay: '2.1s' }}>💗</span>
+          <span className="float-bit" style={{ left: '14%', top: '46%', animationDelay: '3s' }}>⭐</span>
+          <span className="float-bit" style={{ left: '92%', top: '64%', animationDelay: '0.7s' }}>🎀</span>
+          <span className="float-bit" style={{ left: '4%', top: '74%', animationDelay: '2.6s' }}>🫧</span>
+          <span className="float-bit" style={{ left: '50%', top: '90%', animationDelay: '1.9s' }}>🌷</span>
+        </div>
+
+        <header className="site-head">
+          <div className="max-w-5xl mx-auto flex items-center justify-between px-4 h-[72px]">
+            <Link href="/" className="brand">
+              <span className="brand-badge">E</span>
+              <span className="brand-text">Enise<span className="brand-dot">.</span></span>
             </Link>
 
-            {/* Desktop nav */}
-            <nav className="hidden md:flex md:items-center md:gap-1">
+            <nav className="hidden md:flex md:items-center md:gap-2">
               {NAV_ITEMS.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="nav-link px-3 py-1.5 md:px-4 md:py-2 md:mx-1"
-                >
+                <Link key={item.href} href={item.href} className="tab">
+                  <span className="tab-emoji">{NAV_EMOJI[item.href]}</span>
                   {item.label}
                 </Link>
               ))}
@@ -50,14 +84,19 @@ export default function RootLayout({ children }) {
           </div>
         </header>
 
-        <main className="flex-1 max-w-5xl mx-auto w-full px-4 py-6 sm:py-10">
+        <main className="flex-1 max-w-5xl mx-auto w-full px-4 py-8 sm:py-12 relative z-10">
           {children}
         </main>
 
-        <footer className="py-10 mt-auto text-center border-t border-[var(--border)] bg-[var(--card)]/50">
-          <div className="max-w-5xl mx-auto px-4 text-sm flex flex-col sm:flex-row items-center justify-center gap-x-4 gap-y-1">
-            <span>© {new Date().getFullYear()} Enise Perera — Crafted with love, music & adventure 💗✨</span>
-            <a href="/feed.xml" className="text-[var(--accent)] hover:text-[var(--accent-dark)] font-medium transition-colors">RSS feed</a>
+        <footer className="site-foot">
+          <div className="wave-top" aria-hidden="true" />
+          <div className="max-w-5xl mx-auto px-4 py-10 text-center">
+            <div className="foot-hand">made with 💗, music & a little bit of magic</div>
+            <div className="mt-2 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-[var(--text-muted)]">
+              <span>© {new Date().getFullYear()} Enise Perera</span>
+              <span className="text-[var(--pink-300)]">•</span>
+              <a href="/feed.xml" className="foot-link">RSS feed</a>
+            </div>
           </div>
         </footer>
       </body>

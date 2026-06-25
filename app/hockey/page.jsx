@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getPostsByCategory } from '@/lib/content';
-import HeroMedia from '@/app/components/HeroMedia';
+import PageHeader from '@/app/components/PageHeader';
+import PostCard from '@/app/components/PostCard';
 
 export const metadata = {
   title: 'Hockey',
@@ -11,52 +12,31 @@ export default function HockeyPage() {
 
   return (
     <div>
-      <div className="mb-10">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-[-0.02em] mb-2">Hockey 🏑</h1>
-        <p className="text-[1.05rem] text-[var(--text-muted)] max-w-prose">
-          The thrill of the game, great teammates, and growing with every match.
-        </p>
-      </div>
+      <PageHeader
+        category="hockey"
+        emoji="🏑"
+        title="Hockey"
+        subtitle="the thrill of the game, brilliant teammates & growing with every match"
+      />
 
       {posts.length > 0 ? (
-        <div className="space-y-4">
-          {posts.map((post) => (
-            <Link 
-              key={post.slug} 
-              href={`/hockey/${post.slug}`} 
-              className="card flex gap-4 sm:gap-6 p-4 sm:p-5 items-center group hover:shadow-lg hover:-translate-y-0.5 transition-all"
-            >
-              <div className="flex-1">
-                <h3 className="font-semibold text-lg sm:text-xl mb-1 group-hover:text-[var(--pink-700)] transition">
-                  {post.frontmatter.title}
-                </h3>
-                <p className="text-[var(--text-muted)] line-clamp-2">{post.frontmatter.description}</p>
-              </div>
-              {post.frontmatter.hero && (
-                <div className="w-20 h-16 sm:w-28 sm:h-24 flex-shrink-0 overflow-hidden rounded-2xl border border-[var(--border)]">
-                  <HeroMedia
-                    hero={post.frontmatter.hero}
-                    className="w-20 h-16 sm:w-28 sm:h-24 group-hover:scale-105"
-                    alt=""
-                  />
-                </div>
-              )}
-            </Link>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {posts.map((post, i) => (
+            <PostCard key={post.slug} post={post} category="hockey" index={i} />
           ))}
         </div>
       ) : (
-        <div className="card p-12 text-center">
-          <div className="text-5xl sm:text-6xl md:text-7xl mb-6">🏑</div>
-          <h2 className="text-2xl font-semibold mb-3">Adventures starting soon</h2>
-          <p className="max-w-xs mx-auto text-[var(--text-muted)]">
-            I love playing hockey. Content and stories will go here as I create them.
-            Check back soon!
+        <div className="card tilt-l p-12 text-center max-w-md mx-auto">
+          <div className="text-6xl mb-4">🏑</div>
+          <h2 className="text-2xl mb-2">adventures starting soon</h2>
+          <p className="hand text-2xl text-[var(--pink-500)]">
+            I love playing hockey — match stories will land here as I write them!
           </p>
         </div>
       )}
 
-      <div className="mt-12 text-center">
-        <Link href="/" className="btn btn-ghost">← Back to home</Link>
+      <div className="mt-14 text-center">
+        <Link href="/" className="btn btn-ghost">← back home</Link>
       </div>
     </div>
   );
