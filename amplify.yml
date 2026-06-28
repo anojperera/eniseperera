@@ -7,6 +7,12 @@ frontend:
     build:
       commands:
         - npm run build
+        - echo "=== Build output contents (out/) ==="
+        - ls -la out/ | head -20
+        - echo "=== Checking for index.html ==="
+        - ls -l out/index.html || echo "No out/index.html"
+        - echo "=== Number of files ==="
+        - find out -type f | wc -l
   artifacts:
     baseDirectory: out
     files:

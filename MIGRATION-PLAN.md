@@ -25,7 +25,7 @@
   - Video embeds via video.js (many .MOV/.mp4)
 - Navigation: sticky mobile header + drawer sidebar (Home / Projects / Blog) + RSS
 - Current theme: `data-theme="valentine"` (DaisyUI cute pink/pastel)
-- Deploy: S3 + CloudFront (buildspec.yaml + npm deploy script)
+- Deploy: AWS Amplify (current)
 - Extras: RSS, basic sitemap, SEO meta
 
 ### Content inventory (high level)
@@ -279,7 +279,7 @@ Keep the warm personal tone — redesign is visual + structural, not rewrite tex
 - Test all videos, images, music players
 - Lighthouse / perf quick check
 - User review (you)
-- Update domain DNS to Amplify (if changing from CF)
+- Update domain DNS in Route53 to point to Amplify (A alias for apex, CNAME for www)
 - Announce or redirect strategy if needed
 - Archive old Astro code? (keep in git history)
 
@@ -344,7 +344,7 @@ Remaining open (will resolve during implementation):
 - Preferred exact MDX implementation details (I'll recommend a clean approach).
 - Must-keep visual elements (avatar EBP?, exact nav style)?
 - New pages beyond the four (About/Contact)?
-- Hosting cutover timing / domain move from current CF.
+- (Historical) Domain cutover from previous hosting completed.
 
 ---
 

@@ -70,6 +70,27 @@ When adding new media, upload to the S3 bucket and reference the path in your `.
 3. Build output directory: `out`
 4. The site is fully static.
 
+### Custom Domain + Route53 (Direct to Amplify)
+
+1. In the Amplify Console, open your app → **Domain management** → **Add domain**.
+2. Enter `eniseperera.com`.
+3. Amplify will show the exact DNS records you need to create.
+
+4. In Route53, create the following records:
+
+   **For the apex domain (`eniseperera.com`):**
+   - Record type: **A**
+   - Alias: **Yes**
+   - Alias target: Select (or paste) the value provided by Amplify (usually a domain like `d1234567890.cloudfront.net` or the Amplify app domain). This is Amplify's managed endpoint.
+
+   **For `www.eniseperera.com`:**
+   - Record type: **CNAME**
+   - Value: the domain shown by Amplify (same as the alias target above).
+
+Amplify automatically provisions and manages the CloudFront distribution when you add a custom domain through its console. You do **not** need to create or manage a separate CloudFront distribution.
+
+After the records propagate, the site will be available at `https://eniseperera.com`.
+
 ## Old Astro site
 
 The original Astro version is archived in `_archive/astro-src/`.

@@ -34,7 +34,7 @@ Static export is enforced in `next.config.mjs` (`output: 'export'`, `trailingSla
 
 **Media resolution** — `MEDIA_BASE` (env `NEXT_PUBLIC_MEDIA_BASE`, default the eu-west-2 S3 bucket) is defined in both `lib/content.js` and `lib/site.js`. `HeroMedia` and content resolve a `hero`/media path: absolute URLs (`http`) and root-relative (`/`) paths pass through; everything else is prefixed with `MEDIA_BASE`. `HeroMedia` auto-detects video by extension (`.mov/.mp4/.webm/.m4v`). The S3 hostnames must be allowlisted in `next.config.mjs` `images.remotePatterns`.
 
-**Site config** (`lib/site.js`) — `SITE_TITLE`, `SITE_DESCRIPTION`, `SITE_URL`, `NAV_ITEMS`. `SITE_URL` is `https://eniseperera.com` and is used by metadata, sitemap, and the RSS feed; update it here on DNS cutover.
+**Site config** (`lib/site.js`) — `SITE_TITLE`, `SITE_DESCRIPTION`, `SITE_URL`, `NAV_ITEMS`. `SITE_URL` is `https://eniseperera.com` and is used by metadata, sitemap, and the RSS feed.
 
 **Generated routes** — `app/feed.xml/route.js` (RSS via `feed`, `force-static`) and `app/sitemap.js`. Both depend on `getAllPosts()`, so new posts appear automatically.
 
